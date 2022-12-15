@@ -35,7 +35,7 @@ const login = async (req, res) => {
         if (!req.body.username && !req.body.password) {
             return res.status(400).json({ message: 'the body is not empty' })
         }
-        const user = await userModel.findOne({ username: req.body.username })
+        const user = await userModel.findOneAndUpdate({ username: req.body.username })
         if (!user) return res.status(404).json({ message: 'user name is not found' })
         
 
