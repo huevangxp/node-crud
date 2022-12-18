@@ -11,7 +11,7 @@ exports.auth = (req, res, next) => {
 
         console.log(decoded)
 
-        // req.user = decoded.user
+         req.user = decoded.user
         
         next()
 
